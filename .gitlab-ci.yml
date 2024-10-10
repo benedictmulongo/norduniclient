@@ -1,0 +1,33 @@
+---
+stages:
+  - test
+  - deploy
+
+image: python:3
+
+variables:
+  NEO4J_AUTH: neo4j/testing
+
+services:
+  - neo4j:4.4
+
+
+before_script:
+  - python -V
+
+test:
+  stage: test
+  tags:
+    - docker
+  script:
+    - python setup.py testing
+    - python setup.py test
+
+deploy:
+  stage: deploy
+  only:
+    - tags
+  script:
+    - pip install -U twine build
+    - python -m build
+    - twine upload dist/* --verbose
