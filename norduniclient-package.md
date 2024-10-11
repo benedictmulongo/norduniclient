@@ -1,12 +1,20 @@
 # python-norduniclient
-[![PyPI](https://img.shields.io/pypi/v/norduniclient.svg)](https://pypi.python.org/pypi/norduniclient)
 
+[![PyPI](https://img.shields.io/pypi/v/norduniclient.svg)](https://pypi.python.org/pypi/norduniclient)
 
 Neo4j database client for NORDUnet network inventory
 
-## Setup 
+## Compatibility
 
-```
+| Tools       | Version   |
+| ----------- | --------- |
+| neo4j DB    | 4.4.x     |
+| neo4j       | 4.4.x     |
+| neomodel    | 5.0.x     |
+
+## Setup
+
+```bash
 poetry shell
 poetry install
 ```
@@ -23,7 +31,7 @@ NEO4J_USER=xx
 NEO4J_PASSWORD=xx
 ```
 
-```
+```bash
 poetry run python -m unittest discover
 ```
 

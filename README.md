@@ -1,10 +1,18 @@
 # python-norduniclient
-[![PyPI](https://img.shields.io/pypi/v/norduniclient.svg)](https://pypi.python.org/pypi/norduniclient)
 
+[![PyPI](https://img.shields.io/pypi/v/norduniclient.svg)](https://pypi.python.org/pypi/norduniclient)
 
 Neo4j database client for NORDUnet network inventory
 
-## Setup 
+## Compatibility
+
+| Tools       | Version   |
+| ----------- | --------- |
+| neo4j DB    | 4.4.x     |
+| neo4j       | 4.4.x     |
+| neomodel    | 5.0.x     |
+
+## Setup
 
 ```
 poetry shell
@@ -31,7 +39,6 @@ poetry run python -m unittest discover
 
 or save the environment variables in a local file `.env` and run it with [dotenvx](https://dotenvx.com/) as follows:
 
-
 ```bash
 dotenvx run -- poetry run python -m unittest discover
 ```
@@ -46,18 +53,15 @@ nox -rs tests
 nox -rs tests_dotenv
 ```
 
-
-
 ## Installation
 
 ```bash
 pip install norduniclient
 ```
 
+python3 -m pip install --index-url <https://platform.sunet.se/api/packages/benedith/pypi/simple/> --extra-index-url <https://pypi.org/simple/> norduniclient
 
-python3 -m pip install --index-url https://platform.sunet.se/api/packages/benedith/pypi/simple/ --extra-index-url https://pypi.org/simple/ norduniclient
-
-python3 -m pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ jolieprinter
+python3 -m pip install -i <https://test.pypi.org/simple/> --extra-index-url <https://pypi.org/simple/> jolieprinter
 
 ## Usage
 
@@ -69,7 +73,6 @@ NODE_META_TYPE_CHOICES = zip(nc.META_TYPES, nc.META_TYPES)
 print("nc.META_TYPES=", nc.META_TYPES)
 ```
 
-
 ### Poetry guide
 
 ```
@@ -79,29 +82,35 @@ poetry run python [operation]
 ### Add depenency
 
 #### Add a new lib
+
 ```bash
 poetry add <library>
 ```
+
 #### Remove a lib
+
 ```bash
 poetry remove <library>
 ```
 
-
 #### Get venv path
+
 ```bash
 poetry run which python
 ```
 
 #### Show dependencies
+
 ```bash
 poetry show
 ```
+
 ```bash
 poetry run pip list
 ```
 
 #### List configuratiom
+
 ```bash
 poetry config --list
 ```
