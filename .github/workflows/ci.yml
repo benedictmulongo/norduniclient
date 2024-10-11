@@ -50,3 +50,23 @@ jobs:
         # Ensure we can connect to Neo4j
         curl -I http://localhost:7474
         poetry run python -m unittest discover -s tests
+  build:
+    needs: test  # Only run after tests succeed
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name: Install Poetry
+      run: curl -sSL https://install.python-poetry.org | python3 -
+
+    - name: Install Dependencies
+      run: poetry install
+
+    - name: Build the package
+      run: poetry build
