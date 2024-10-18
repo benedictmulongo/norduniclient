@@ -71,6 +71,9 @@ jobs:
     - name: Build the package
       run: poetry build
 
+    - name: List files in dist/
+      run: ls -al dist
+
     - name: Publish artifacts
       if: github.ref == 'refs/tags/v*'
       run: |
