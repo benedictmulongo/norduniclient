@@ -94,4 +94,5 @@ env
 
 # PyCharm project settings
 .idea
+./.idea
 

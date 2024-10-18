@@ -104,7 +104,7 @@ poetry run which python
 ```bash
 poetry show
 ```
-
+                                                                                
 ```bash
 poetry run pip list
 ```

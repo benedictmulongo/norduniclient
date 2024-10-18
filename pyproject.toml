@@ -3,9 +3,7 @@ name = "norduniclient"
 version = "1.4.4"
 description = "Neo4j (>=4.4.12) database client using bolt for NORDUnet network inventory"
 authors = [
-    "Johan Lundberg <benedith@sunet.se>",
-    "Markus Krogh <benedith@sunet.se>",
-    "Benedith Mulongo <benedith@sunet.se>",
+    "Johan Lundberg <lundberg@nordu.net>",
     ]
 readme = "norduniclient-package.md"
 homepage = "https://github.com/NORDUnet/python-norduniclient"
